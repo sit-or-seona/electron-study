@@ -33,7 +33,14 @@
 - main process와 달리, 여러 개가 있을 수 있고 각각 별도의 process에서 작동
 - 숨기기 가능
 
-## 5. preload script
+## 5. utility process
+
+- main process의 하위 프로세스
+- main process에서 실행할 수 없는 신뢰할 수 없는 서비스를 실행 가능
+- Chromium은 utility process를 사용해 네트워크 I/O, 오디오/비디오 처리, 기기 입력 등을 수행
+- UtilityProcess API를 사용해 utility process 생성
+
+## 6. preload script
 
 - renderer process에서 웹 콘텐츠가 로드되기 전에 실행되는 코드를 preload script에 작성
 - renderer context 내에서 실행되지만 Node.js API를 엑세스할 수 있기 때문에 더 많은 권한이 부여됨
